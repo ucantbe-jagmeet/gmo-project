@@ -1,9 +1,15 @@
+// import Button from "@mui/material/Button";
+// import Container from "@mui/material/Container";
+import Navbar from "./Components/Navbar";
+
 function App() {
   return (
     <>
-      <main>
+      {/* <Container>
         <h2>Hello world</h2>
-      </main>
+        <Button variant="contained">Hello world</Button>
+      </Container> */}
+      <Navbar />
     </>
   );
 }
