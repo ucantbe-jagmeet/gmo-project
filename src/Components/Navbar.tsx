@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
         {navbarData.map((item) => {
           return (
             <div key={item.id}>
-              <h2 className="cursor-pointer hover:text-white hover:bg-purple-500 px-1 py-0.5 rounded transitio duration-200 text-gray-600">
+              <h2 className="cursor-pointer hover:text-white hover:bg-blue-300 px-1 py-0.5 rounded transitio duration-200 text-gray-600">
                 {item.title}
               </h2>
             </div>
