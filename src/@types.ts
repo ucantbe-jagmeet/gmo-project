@@ -3,3 +3,8 @@ export interface INavbarData {
   title: string;
   href: string;
 }
+export interface IUser {
+  name: string;
+  phone: string;
+  email: string;
+}
