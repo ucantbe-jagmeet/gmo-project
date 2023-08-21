@@ -2,10 +2,19 @@ import React from "react";
 import { navbarData } from "../utils/data";
 import { Logo } from ".";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    localStorage.clear();
+    setTimeout(() => {
+      navigate("/register");
+    }, 1000);
+  };
   return (
-    <main className="h-16 bg-blue-200 flex justify-between items-center px-40">
+    <main className="h-16 bg-blue-200 flex justify-between items-center px-20">
       <div>
         <Logo />
       </div>
@@ -19,6 +28,11 @@ const Navbar: React.FC = () => {
             </Link>
           );
         })}
+      </div>
+      <div>
+        <Button variant="contained" size="small" onClick={handleClick}>
+          sign out
+        </Button>
       </div>
     </main>
   );

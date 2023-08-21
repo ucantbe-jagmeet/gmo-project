@@ -11,9 +11,4 @@ export const navbarData: INavbarData[] = [
     title: "About",
     href: "/about",
   },
-  {
-    id: 2,
-    title: "Signout",
-    href: "/register",
-  },
 ];

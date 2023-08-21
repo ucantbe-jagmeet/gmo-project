@@ -8,7 +8,6 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   children: React.ReactNode;
 }) => {
   const isUserRegistered = localStorage.getItem("userRegistered") === "true";
-  console.log(isUserRegistered);
   if (!isUserRegistered) {
     return <Navigate to="/register" />;
   }

@@ -10,7 +10,7 @@ const DataGridComponent = () => {
 
   const fetchJsonData = async () => {
     const resp = await axios.get(url);
-    const responseData = await resp.data;
+    const responseData: IDataGrid[] = await resp.data;
     setData(responseData);
   };
   useEffect(() => {
