@@ -1,7 +1,13 @@
 import React from "react";
+import { DataGrid, Navbar } from "../Components";
 
 const Home: React.FC = () => {
-  return <div>Home Page</div>;
+  return (
+    <main>
+      <Navbar />
+      <DataGrid />
+    </main>
+  );
 };
 
 export default Home;

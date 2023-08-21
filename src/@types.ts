@@ -14,3 +14,10 @@ export interface IUser {
 export interface ProtectedRouteProps {
   children: ReactNode;
 }
+
+export interface IDataGrid {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}

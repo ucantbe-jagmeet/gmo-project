@@ -1,7 +1,12 @@
 import React from "react";
+import { Navbar } from "../Components";
 
 const About: React.FC = () => {
-  return <div>About Page</div>;
+  return (
+    <main>
+      <Navbar />
+    </main>
+  );
 };
 
 export default About;
