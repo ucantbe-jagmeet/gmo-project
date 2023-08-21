@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { IUser } from "../@types";
+import { useNavigate } from "react-router-dom";
 
 const initialState: IUser = {
   name: "",
@@ -22,6 +23,8 @@ const Register: React.FC = () => {
     email: "",
   });
   const [buttonDisabled, setButtonDisabled] = React.useState(false);
+  const navigate = useNavigate();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -31,6 +34,10 @@ const Register: React.FC = () => {
     localStorage.setItem("userRegistered", "true");
     localStorage.setItem("user", JSON.stringify(user));
     setUser(initialState);
+
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
   };
 
   useEffect(() => {
@@ -44,6 +51,7 @@ const Register: React.FC = () => {
       setButtonDisabled(true);
     }
   }, [user]);
+
   return (
     <Container className="flex items-center justify-center  h-screen bg-blue-50 ">
       <div className="w-full h-full  max-w-md p-6 bg-white rounded mx-auto shadow-md flex  justify-center flex-col">
