@@ -28,7 +28,8 @@ const Register: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    localStorage.setItem("userRegistered", JSON.stringify(user));
+    localStorage.setItem("userRegistered", "true");
+    localStorage.setItem("user", JSON.stringify(user));
     setUser(initialState);
   };
 

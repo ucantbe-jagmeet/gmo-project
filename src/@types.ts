@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface INavbarData {
   id: number;
   title: string;
@@ -7,4 +9,8 @@ export interface IUser {
   name: string;
   phone: string;
   email: string;
+}
+
+export interface ProtectedRouteProps {
+  children: ReactNode;
 }
