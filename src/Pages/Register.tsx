@@ -5,6 +5,7 @@ import {
   Container,
   Typography,
   Avatar,
+  Box,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { IUser } from "../@types";
@@ -37,7 +38,7 @@ const Register: React.FC = () => {
 
     setTimeout(() => {
       navigate("/");
-    }, 1000);
+    }, 10);
   };
 
   useEffect(() => {
@@ -53,17 +54,42 @@ const Register: React.FC = () => {
   }, [user]);
 
   return (
-    <Container className="flex items-center justify-center  h-screen bg-blue-50 ">
-      <div className="w-full h-full  max-w-md p-6 bg-white rounded mx-auto shadow-md flex  justify-center flex-col">
-        <div className="flex flex-col items-center mb-6">
-          <Avatar className="w-12 h-12 bg-blue-500">
+    <Container
+      sx={{
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        backgroundColor: "#f0f4f8",
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          maxWidth: 400,
+          padding: 3,
+          backgroundColor: "white",
+          borderRadius: 2,
+          boxShadow: 3,
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            mb: 2,
+          }}
+        >
+          <Avatar sx={{ bgcolor: "primary.main", width: 56, height: 56 }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography variant="h5" className="mt-4">
-            Sign in
+          <Typography variant="h5" sx={{ mt: 2 }}>
+            Sign up
           </Typography>
-        </div>
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        </Box>
+        <form onSubmit={handleSubmit}>
           <TextField
             variant="outlined"
             fullWidth
@@ -74,6 +100,7 @@ const Register: React.FC = () => {
             value={user.name}
             onChange={handleChange}
             autoFocus
+            sx={{ mb: 2 }}
           />
           <TextField
             variant="outlined"
@@ -84,6 +111,7 @@ const Register: React.FC = () => {
             autoComplete="tel"
             value={user.phone}
             onChange={handleChange}
+            sx={{ mb: 2 }}
           />
           <TextField
             variant="outlined"
@@ -94,19 +122,19 @@ const Register: React.FC = () => {
             autoComplete="email"
             value={user.email}
             onChange={handleChange}
+            sx={{ mb: 2 }}
           />
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
-            className="bg-blue-500 hover:bg-blue-600"
             disabled={buttonDisabled}
           >
             {buttonDisabled ? "No signup" : "Signup"}
           </Button>
         </form>
-      </div>
+      </Box>
     </Container>
   );
 };
