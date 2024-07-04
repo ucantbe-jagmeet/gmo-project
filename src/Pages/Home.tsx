@@ -5,7 +5,7 @@ import DepartmentsList from "../Components/DepartmentList";
 
 const Home: React.FC = () => {
   return (
-    <main>
+    <>
       <Navbar />
       <Container>
         <DataGrid />
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
           <DepartmentsList />
         </Box>
       </Container>
-    </main>
+    </>
   );
 };
 
