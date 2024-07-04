@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import axios from "axios";
 import { IDataGrid } from "../@types";
+import { Container } from "@mui/material";
 
 const url = "https://jsonplaceholder.typicode.com/posts";
 
@@ -26,7 +27,7 @@ const DataGridComponent = () => {
     {
       field: "userId",
       headerName: "UserId",
-      width: 250,
+      width: 150,
     },
     {
       field: "title",
@@ -36,7 +37,7 @@ const DataGridComponent = () => {
     {
       field: "body",
       headerName: "Body",
-      width: 450,
+      width: 350,
     },
   ];
 
@@ -46,16 +47,26 @@ const DataGridComponent = () => {
     title: row.title,
     body: row.body,
   }));
-  const gridConfig = {
-    rows,
-    columns,
-    pageSize: 10, // This property might not be recognized by the DataGrid component
-    rowsPerPageOptions: [10, 20, 30],
-  };
+
   return (
-    <main className="h-[90vh] px-20 py-10 w-full">
-      <DataGrid {...gridConfig} />
-    </main>
+    <Container
+      sx={{
+        height: "90vh",
+        paddingTop: "20px",
+      }}
+    >
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        initialState={{
+          pagination: {
+            paginationModel: {
+              pageSize: 10,
+            },
+          },
+        }}
+      />
+    </Container>
   );
 };
 

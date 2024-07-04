@@ -1,6 +1,7 @@
 import React from "react";
-import { DataGrid, Department1, Department2, Navbar } from "../Components";
+import { DataGrid, Navbar } from "../Components";
 import { Container, Box } from "@mui/material";
+import DepartmentsList from "../Components/DepartmentList";
 
 const Home: React.FC = () => {
   return (
@@ -17,8 +18,7 @@ const Home: React.FC = () => {
             height: 384,
           }}
         >
-          <Department1 />
-          <Department2 />
+          <DepartmentsList />
         </Box>
       </Container>
     </main>
